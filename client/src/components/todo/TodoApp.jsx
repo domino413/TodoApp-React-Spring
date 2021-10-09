@@ -9,6 +9,7 @@ import LoginComponent from "./LoginComponent.jsx"
 import WelcomeComponent from "./WelcomeComponent.jsx"
 import TodoComponent from "./TodoComponent.jsx"
 import LogoutComponent from "./LogoutComponent.jsx"
+import ErrorComponent from "./ErrorComponent.jsx"
 
 class TodoApp extends Component {
     render() {
@@ -18,7 +19,7 @@ class TodoApp extends Component {
                     <HeaderComponent />
                     <Switch>
                         <Route path="/login" exact component={LoginComponent} />
-                        <AuthenticatedRoute path="/welcome" component={WelcomeComponent} />
+                        <AuthenticatedRoute path="" component={WelcomeComponent} />
                         <AuthenticatedRoute path="/todos" component={TodoComponent} />
                         <AuthenticatedRoute path="/logout" component={LogoutComponent} />
                         <Route component={ErrorComponent} />
@@ -29,10 +30,6 @@ class TodoApp extends Component {
             </div>
         )
     }
-}
-
-function ErrorComponent() {
-    return <div><h1>404</h1><h3>An error has occurred.</h3><p>Please check the URL link or contact support at 123-456-7890.</p></div>
 }
 
 export default TodoApp
